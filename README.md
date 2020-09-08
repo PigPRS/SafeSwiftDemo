@@ -38,7 +38,7 @@ void disable_gdb() {
 }
 ```
 
->代码示例：MyPtrace.h，MyPtrace.c，main.swift
+>代码示例：MyPtrace.h，MyPtrace.c，main.swift（需要注释工程自带的@UIApplicationMain）
 
 ### 2、Sysctl
 
