@@ -32,7 +32,7 @@ void disable_gdb() {
         string[i]=str[i];
     }
     string[i]='\0';
-    ptrace_ptr_t ptrace_ptr = dlsym(handle, string);
+    ptrace_ptr_t ptrace_ptr = (ptrace_ptr_t)dlsym(handle, string);
     ptrace_ptr(PT_DENY_ATTACH, 0, 0, 0);
     dlclose(handle);
 }
