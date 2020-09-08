@@ -1,0 +1,68 @@
+//
+//  PrefixHeader.pch
+//  SafeSwiftDemo
+//
+//  Created by bhj on 2020/5/19.
+//  Copyright © 2020 bhj. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//类名、方法名混淆
+#import "CodeObFuncOC.h"
+#import "CodeObClassOC.h"
+
+//字符串加密
+#ifdef __cplusplus
+extern "C" {
+#endif
+    
+#import <pthread.h>
+    
+    typedef struct AMEncodedString {
+        char *origstr;
+        int size;
+        pthread_mutex_t mutex;
+    } AMEncodedString;
+    
+    static inline char *AMDecodeCString(AMEncodedString *str) {
+        pthread_mutex_lock(&str->mutex);
+        char seed = str->origstr[str->size-1];
+        int j = 0;
+        do {
+            str->origstr[j] ^= seed;
+            j++;
+        } while (j < str->size);
+        pthread_mutex_unlock(&str->mutex);
+        return str->origstr;
+    }
+    
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+    
+    static inline NSString *AMDecodeOCString(AMEncodedString *str) {
+        pthread_mutex_lock(&str->mutex);
+        char seed = str->origstr[str->size-1];
+        int j = 0;
+        do {
+            str->origstr[j] ^= seed;
+            j++;
+        } while (j < str->size);
+        pthread_mutex_unlock(&str->mutex);
+        return [[NSString alloc] initWithBytesNoCopy:str->origstr length:str->size-1 encoding:NSUTF8StringEncoding freeWhenDone:0];
+    }
+    
+#endif
+    
+#ifdef __cplusplus
+}
+#endif
+
+static unsigned char BHJSafeOCKey[] = { 0xA5, 0xB2, 0xA3, 0xA2, 0xA5, 0xB9, 0xF7, 0xB4, 0xF7, 0xA4, 0xA3, 0xA5, 0xBE, 0xB9, 0xB0, 0xD7 };
+static AMEncodedString BHJSafeEncodedOCKey = { (char *)BHJSafeOCKey, sizeof(BHJSafeOCKey) };
+
+static unsigned char BHJSafeCKey[] = { 0x08, 0x0B, 0x07, 0x05, 0x08, 0x44, 0x07, 0x0C, 0x05, 0x16, 0x44, 0x17, 0x10, 0x16, 0x64 };
+static AMEncodedString BHJSafeEncodedCKey = { (char *)BHJSafeCKey, sizeof(BHJSafeCKey) };
+
+#endif /* PrefixHeader_pch */

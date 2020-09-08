@@ -1,0 +1,16 @@
+PODS:
+  - FileMD5Hash (2.0.0)
+
+DEPENDENCIES:
+  - FileMD5Hash
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - FileMD5Hash
+
+SPEC CHECKSUMS:
+  FileMD5Hash: 3ed69cc19a21ff4d30ae8833fc104275ad2c7de0
+
+PODFILE CHECKSUM: e0ecaaa59ce3af74b115fa26510c5ee035450b62
+
+COCOAPODS: 1.9.1
