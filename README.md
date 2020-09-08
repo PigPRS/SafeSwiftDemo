@@ -167,7 +167,7 @@ class func isJailbroken() -> Bool {
 
 >代码示例：CheckPhoneEnvironment.swift，ViewController.swift
 
-## 四、OC代码混淆（使用脚本动态生成宏定义实现
+## 四、OC代码混淆（使用脚本动态生成宏定义实现）
 
 >这里生成混淆代码的方法我们通过shell脚本来实现，同时我们需要一个文档来写入我们需要进行混淆的方法名或是变量名。
 
