@@ -261,6 +261,8 @@ sqlite3 $SYMBOL_DB_FILE .dump
 
 >然后添加$PROJECT_DIR/$PROJECT_NAME/confuseOC/confuseFuncOC.sh
 
+![](https://github.com/PigPRS/SafeSwiftDemo/blob/master/%E5%9B%BE%E7%89%871.png)
+
 ### 4、给脚本授权
 
 >接下来还是在我们项目的文件夹下，通过终端给我们的脚本赋予最高权限  
@@ -268,7 +270,11 @@ chmod 777 confuse.sh
 
 ### 5、添加预编译文件PCH
 
+![](https://github.com/PigPRS/SafeSwiftDemo/blob/master/%E5%9B%BE%E7%89%872.png)
+
 >然后配置PCH文件
+
+![](https://github.com/PigPRS/SafeSwiftDemo/blob/master/%E5%9B%BE%E7%89%873.png)
 
 >添加$PROJECT_DIR/$PROJECT_NAME/confuseOC/PrefixHeader.pch
 
