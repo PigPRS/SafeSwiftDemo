@@ -39,9 +39,10 @@ class ViewController: UIViewController {
     public func viewControllerTestMethodA2() {
         print("viewControllerTestMethodA2")
         
-        if RefuseDebug.isDebugger() {
-            exit(0)
-        }
+//        //手动检测是否正在调试
+//        if RefuseDebug.isDebugger() {
+//            exit(0)
+//        }
         
         let hashDic = CheckFileMD5Hash.getFileHash(withPath: Bundle.main.resourcePath ?? "")
         print(hashDic)
