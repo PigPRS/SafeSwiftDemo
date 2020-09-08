@@ -178,15 +178,15 @@ touch func.list
 
 ### 2、写入shell脚本
 
->在项目中找到刚刚拖进来的.sh文件，在confuseFuncOC.sh中写入脚本  
+>在项目中找到刚刚拖进来的.sh文件，在confuseFuncOC.sh中写入脚本
 
+```
 #!/bin/bash
 
 # 这是Shell脚本，如果不懂shell，自行修炼：http://www.runoob.com/linux/linux-shell.html
 
 # 以下使用sqlite3进行增加数据，如果不了解sqlite3命令，自行修炼：http://www.runoob.com/sqlite/sqlite-tutorial.html
 
-```
 #数据表名
 TABLENAME="CodeObFuncOC"
 
