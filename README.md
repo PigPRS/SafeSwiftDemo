@@ -270,13 +270,14 @@ chmod 777 confuse.sh
 
 ### 5、添加预编译文件PCH
 
+>新建PCH文件
+
 ![](https://github.com/PigPRS/SafeSwiftDemo/blob/master/%E5%9B%BE%E7%89%872.png)
 
->然后配置PCH文件
+>然后配置PCH文件  
+添加$PROJECT_DIR/$PROJECT_NAME/confuseOC/PrefixHeader.pch
 
 ![](https://github.com/PigPRS/SafeSwiftDemo/blob/master/%E5%9B%BE%E7%89%873.png)
-
->添加$PROJECT_DIR/$PROJECT_NAME/confuseOC/PrefixHeader.pch
 
 ### 6、生成CodeObFuncOC.h文件
 
