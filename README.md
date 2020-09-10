@@ -1,6 +1,13 @@
 # SafeSwiftDemo（iOS安全加固）
 
-## 一、防止App被别人动态调试
+## 目录：
+## <a href="#1">一、防止App被别人动态调试</a>
+## <a href="#2">二、防止文件被篡改</a>
+## <a href="#3">三、越狱检测</a>
+## <a href="#4">四、OC代码混淆（使用脚本动态生成宏定义实现）</a>
+## <a href="#5">五、字符串加密</a>
+
+## <a name="1">一、防止App被别人动态调试</a>
 
 ### 1、Ptrace
 
@@ -64,7 +71,7 @@ class func isDebugger() -> Bool {
 
 >代码示例：RefuseDebug.swift，ViewController.swift
 
-## 二、防止文件被篡改
+## <a name="2">二、防止文件被篡改</a>
 
 >对需要保护的重要文件做MD5hash校验，通过对比原始文件的hash和当前的hash来做判断。
 
@@ -105,7 +112,7 @@ class func getAllFiles(atPath: String) -> [String] {
 
 >代码示例：CheckFileMD5Hash.swift，ViewController.swift
 
-## 三、越狱检测
+## <a name="3">三、越狱检测</a>
 
 >一般能拿到自己ipa包都需要有一台越狱的手机
 
@@ -167,7 +174,7 @@ class func isJailbroken() -> Bool {
 
 >代码示例：CheckPhoneEnvironment.swift，ViewController.swift
 
-## 四、OC代码混淆（使用脚本动态生成宏定义实现）
+## <a name="4">四、OC代码混淆（使用脚本动态生成宏定义实现）</a>
 
 >这里生成混淆代码的方法我们通过shell脚本来实现，同时我们需要一个文档来写入我们需要进行混淆的方法名或是变量名。
 
@@ -329,7 +336,7 @@ viewControllerTestMethodA
 
 >代码示例：PrefixHeader.pch，confuseFuncOC.sh，CodeObFuncOC.h，func.list
 
-## 五、字符串加密
+## <a name="5">五、字符串加密</a>
 
 >将明文字符串的每一个字符通过移位等操作转成16进制字符集，避免明文保存秘钥等重要信息。
 
