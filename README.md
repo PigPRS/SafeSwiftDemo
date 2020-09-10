@@ -62,7 +62,7 @@ class func isDebugger() -> Bool {
 }
 ```
 
->RefuseDebug.swift，ViewController.swift
+>代码示例：RefuseDebug.swift，ViewController.swift
 
 ## 二、防止文件被篡改
 
